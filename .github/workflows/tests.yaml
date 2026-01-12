@@ -11,13 +11,13 @@ on:
 jobs:
   test:
     runs-on: ${{ matrix.operating-system }}
-    strategy:
-    fail-fast: false
-    matrix:
-      operating-system: ["ubuntu-latest", "windows-latest", "macos-latest"]
-      python-version: ["3.12", "3.11"]
+    strategy:             # <- skal være inde under 'test'
+      fail-fast: false
+      matrix:
+        operating-system: ["ubuntu-latest", "windows-latest", "macos-latest"]
+        python-version: ["3.12", "3.11"]
 
-    steps:
+    steps:                # <- også inde under 'test'
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -31,6 +31,7 @@ jobs:
         run: |
           uv sync --dev --locked
           uv list
+
 
 
       - name: Run tests & coverage
