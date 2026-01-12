@@ -77,12 +77,10 @@ jobs:
           uv sync --dev --locked
           uv pip list
 
-            
+
       - name: Run tests & coverage (disable W&B)
         env:
           WANDB_MODE: disabled
         run: |
           uv run coverage run -m pytest tests/
           uv run coverage report -m --ignore-errors
-
-

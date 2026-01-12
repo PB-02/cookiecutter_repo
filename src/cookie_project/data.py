@@ -64,4 +64,3 @@ def main(raw_dir: str, processed_dir: str):
 
 if __name__ == "__main__":
     typer.run(main)
-
