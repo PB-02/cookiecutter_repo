@@ -83,6 +83,6 @@ jobs:
           WANDB_MODE: disabled
         run: |
           uv run coverage run -m pytest tests/
-          uv run coverage report -m
+          uv run coverage report -m --ignore-errors
 
 
