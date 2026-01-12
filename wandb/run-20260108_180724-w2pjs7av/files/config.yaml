@@ -1,0 +1,49 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            ea98p447eoxzxyz8urt0mhmyz045kak5:
+                cpu_count: 6
+                cpu_count_logical: 12
+                cudaVersion: "12.7"
+                disk:
+                    /:
+                        total: "1081101176832"
+                        used: "29559033856"
+                email: s246103@dtu.dk
+                executable: /home/pb/cookiecutter_repo/.venv/bin/python
+                gpu: NVIDIA GeForce RTX 4050 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      memoryTotal: "6439305216"
+                      name: NVIDIA GeForce RTX 4050 Laptop GPU
+                      uuid: GPU-704c9004-4864-2801-1285-cb1c0521b717
+                host: MSI
+                memory:
+                    total: "7905419264"
+                os: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+                program: -m cookie_project.train
+                python: CPython 3.12.3
+                root: /home/pb/cookiecutter_repo
+                startedAt: "2026-01-08T17:07:24.717464Z"
+                writerId: ea98p447eoxzxyz8urt0mhmyz045kak5
+        m: []
+        python_version: 3.12.3
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 16
+            "4": 3.12.3
+            "5": 0.23.1
+            "12": 0.23.1
+            "13": linux-x86_64
+batch_size:
+    value: 32
+epochs:
+    value: 10
+lr:
+    value: 0.001

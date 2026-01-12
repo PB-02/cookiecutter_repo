@@ -1,0 +1,36 @@
+{
+  "os":  "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python":  "CPython 3.12.3",
+  "startedAt":  "2026-01-12T10:44:51.408744Z",
+  "args":  [
+    "tests/"
+  ],
+  "program":  "-m pytest.__main__",
+  "email":  "s246103@dtu.dk",
+  "root":  "/home/pb/cookiecutter_repo",
+  "host":  "MSI",
+  "executable":  "/home/pb/cookiecutter_repo/.venv/bin/python",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "gpu":  "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "1081101176832",
+      "used":  "30525239296"
+    }
+  },
+  "memory":  {
+    "total":  "7905427456"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "memoryTotal":  "6439305216",
+      "architecture":  "Ada",
+      "uuid":  "GPU-704c9004-4864-2801-1285-cb1c0521b717"
+    }
+  ],
+  "cudaVersion":  "12.7",
+  "writerId":  "7humdrk0ixb4kbginw7cmwpagvtvmnar"
+}
