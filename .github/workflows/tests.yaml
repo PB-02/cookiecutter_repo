@@ -1,3 +1,45 @@
+# name: Unit Tests
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   test:
+#     runs-on: ${{ matrix.operating-system }}
+#     strategy:             # <- skal være inde under 'test'
+#       fail-fast: false
+#       matrix:
+#         operating-system: ["ubuntu-latest", "windows-latest", "macos-latest"]
+#         python-version: ["3.12", "3.11"]
+
+#     steps:                # <- også inde under 'test'
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: ${{ matrix.python-version }}
+#           cache: 'pip'
+
+#       - name: Install dependencies
+#         run: |
+#           uv sync --dev --locked --file uv.lock
+#           uv list
+
+
+
+#       - name: Run tests & coverage
+#         run: |
+#           coverage run -m pytest tests/
+#           coverage report -m
+
+
 name: Unit Tests
 
 on:
@@ -11,13 +53,13 @@ on:
 jobs:
   test:
     runs-on: ${{ matrix.operating-system }}
-    strategy:             # <- skal være inde under 'test'
+    strategy:
       fail-fast: false
       matrix:
         operating-system: ["ubuntu-latest", "windows-latest", "macos-latest"]
         python-version: ["3.12", "3.11"]
 
-    steps:                # <- også inde under 'test'
+    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -27,14 +69,16 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
 
+      - name: Install uv
+        run: pip install uv
+
       - name: Install dependencies
         run: |
           uv sync --dev --locked --file uv.lock
           uv list
 
-
-
       - name: Run tests & coverage
         run: |
           coverage run -m pytest tests/
           coverage report -m
+
