@@ -1,0 +1,19 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Build container image'
+  args: [
+    'build',
+    '.',  # Build context: roden af repo
+    '-t',
+    'europe-west1-docker.pkg.dev/$PROJECT_ID/test-container-registry/dummy-digits',  # Dit registry og image-navn
+    '-f',
+    'dummy_test/Dockerfile'  # Stien til din Dockerfile
+  ]
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Push container image'
+  args: [
+    'push',
+    'europe-west1-docker.pkg.dev/$PROJECT_ID/test-container-registry/dummy-digits'
+  ]
+options:
+  logging: CLOUD_LOGGING_ONLY
